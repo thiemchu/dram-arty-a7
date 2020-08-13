@@ -1,1 +1,1 @@
-# DRAM controller for Arty A7-35 FPGA board
+# DRAM controller for Arty A7-35T FPGA board
