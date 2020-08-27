@@ -1,8 +1,8 @@
 // b = baud rate (in megabaud - MBd)
 // f = frequency of clk (in MHz)
 // SERIAL_WCNT = f/b
-// e.g. b = 0.5, f = 100 -> SERIAL_WCNT = 100/0.5 = 200
-`define SERIAL_WCNT 200 // 0.5MBd UART wait count
+// e.g. b = 1, f = 100 -> SERIAL_WCNT = 100/1 = 100
+`define SERIAL_WCNT 100 // 1MBd UART wait count
 
 `define SS_SER_WAIT 'd0 // RS232C deserializer, State WAIT
 `define SS_SER_RCV0 'd1 // RS232C deserializer, State Receive 0th bit
