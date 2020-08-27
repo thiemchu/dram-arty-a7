@@ -2,6 +2,8 @@ fpga/*
 !fpga/*.xpr
 rtl/dram/clk_wiz_0/*
 !rtl/dram/clk_wiz_0/*.xci
+rtl/clk_wiz_1/*
+!rtl/clk_wiz_1/*.xci
 rtl/dram/mig_7series_0/*
 !rtl/dram/mig_7series_0/*.xci
 !rtl/dram/mig_7series_0/*.prj
