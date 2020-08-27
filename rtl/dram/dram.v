@@ -163,7 +163,7 @@ module DRAM #(
     // DRAM controller -> user design
     assign wen_afifo2 = ren_sfifo;
     assign din_afifo2 = dout_sfifo;
-    assign ren_afifo2 = (!empty_afifo2 && i_busy);
+    assign ren_afifo2 = (!empty_afifo2 && !i_busy);
     AsyncFIFO #(
                 .DATA_WIDTH(APP_DATA_WIDTH),
                 .ADDR_WIDTH(3))
