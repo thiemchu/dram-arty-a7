@@ -76,7 +76,6 @@ module Top #(
     reg                         uart_en;
     reg  [APP_DATA_WIDTH-1 : 0] uart_data;
     reg                         uart_hex;
-    wire                        uart_txd;
 
     wire [APP_DATA_WIDTH-1 : 0] wr_msg;
     wire [APP_DATA_WIDTH-1 : 0] rd_msg;
@@ -89,7 +88,7 @@ module Top #(
     // write message: "WRITE:\n" (space padding before the line break)
     assign wr_msg = {8'h0A, 8'h0D, {(APP_DATA_WIDTH/8-8){8'h20}},
                      8'h3A, 8'h45, 8'h54, 8'h49, 8'h52, 8'h57};
-    // read message: "\nREAD\n" (space padding before the second line break)
+    // read message: "\nREAD:\n" (space padding before the second line break)
     assign rd_msg = {8'h0A, 8'h0D, {(APP_DATA_WIDTH/8-9){8'h20}},
                      8'h3A, 8'h44, 8'h41, 8'h45, 8'h52, 8'h0A, 8'h0D};
     // test passed: "\n\nPASSED!\n" (space padding before the third line break)
@@ -107,7 +106,7 @@ module Top #(
     assign dram_rstx_async = rstx_in & locked;
     assign dram_rst = dram_rst_sync2;
 
-    always @(posedge clk or negedge dram_rstx_async) begin
+    always @(posedge clk_166_67_mhz or negedge dram_rstx_async) begin
         if (!dram_rstx_async) begin
             dram_rst_sync1 <= 1'b1;
             dram_rst_sync2 <= 1'b1;
