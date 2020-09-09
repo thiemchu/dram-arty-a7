@@ -8,3 +8,8 @@ rtl/dram/mig_7series_0/*
 !rtl/dram/mig_7series_0/*.xci
 !rtl/dram/mig_7series_0/*.prj
 !rtl/dram/mig_7series_0/mig_arty_a7.ucf
+rtl/simv
+rtl/simv.daidir/
+rtl/csrc/
+rtl/ucli.key
+rtl/AN.DB/
